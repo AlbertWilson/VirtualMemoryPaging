@@ -14,8 +14,8 @@ public:
 
 	MemoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize);
 	unsigned long long memoryAccess(unsigned long long address);
-	void FIFO();
-	void LRU();
+	void FIFO(unsigned int frames[]);
+	void LRU(unsigned int frames[]);
 
 private:
 	ReplacementPolicy policy;
