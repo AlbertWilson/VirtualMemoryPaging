@@ -17,7 +17,7 @@ public:
 	unsigned long long memoryAccess(unsigned long long address);
 	void FIFO(unsigned long long address);
 	void LRU(unsigned long long address);
-	unsigned long long convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress);
+	unsigned long long convertVirtualAddresstoPhysicalAddress();
 
 private:
 	ReplacementPolicy policy;

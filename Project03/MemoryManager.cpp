@@ -91,7 +91,7 @@ void MemoryManager::LRU(unsigned long long address) {
 
 }
 
-unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress) {
+unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress() {
 
 
 	
