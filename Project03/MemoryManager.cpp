@@ -22,7 +22,7 @@ MemoryManager::MemoryManager(ReplacementPolicy policy, unsigned int pageSize, un
 
 unsigned long long MemoryManager::memoryAccess(unsigned long long address) {
 
-	int pageNumber;
+	unsigned long long pageNumber;
 
 	switch (policy) {
 
