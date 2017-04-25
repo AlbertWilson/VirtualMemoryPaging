@@ -55,14 +55,14 @@ unsigned long long MemoryManager::memoryAccess(unsigned long long address) {
 
 }
 
-void MemoryManager::FIFO(unsigned long long address) {
+void MemoryManager::FIFO(unsigned int pageNum) {
 
 	bool alreadyInList = false;
 
 	//if someone is feeling ambituous and wants to make a hashtable that points to the FIFOlist and do this in O(1) feel free
 	//need to verify that the virtual address is not already in the FIFOlist
-	for (list<unsigned long long>::iterator itr = FIFOlist.begin(); itr != FIFOlist.end(); itr++) {
-		if (*itr == address) {
+	for (list<unsigned int>::iterator itr = FIFOlist.begin(); itr != FIFOlist.end(); itr++) {
+		if (*itr == pageNum) {
 			alreadyInList = true;
 		}
 	}
@@ -72,22 +72,53 @@ void MemoryManager::FIFO(unsigned long long address) {
 		if (FIFOlist.size() == numFrames) { //if the FIFOlist is full, where the memory map is equal to the size of the physical memory
 
 			FIFOlist.pop_front();
-			FIFOlist.push_back(address);
+			FIFOlist.push_back(pageNum);
 			numSwaps++;
 
 		}
 		else {
 			//just go ahead and add it to the queue
-			FIFOlist.push_back(address);
+			FIFOlist.push_back(pageNum);
 
 		}
 	}
 
 }
 
-void MemoryManager::LRU(unsigned long long address) {
+/*
+Least recently used page is at the end of the list
+*/
+void MemoryManager::LRU(unsigned int pageNum) {
 
+	bool alreadyInList = false;
 
+	//if someone is feeling ambituous and wants to make a hashtable that points to the FIFOlist and do this in O(1) feel free
+	//need to verify that the virtual address is not already in the FIFOlist
+	for (list<unsigned int>::iterator itr = LRUlist.begin(); itr != LRUlist.end(); itr++) {
+
+		if (*itr == pageNum) {
+			alreadyInList = true;
+			LRUlist.erase(itr);
+			LRUlist.push_front(pageNum);
+		}
+
+	}
+
+	if (alreadyInList == false) {
+
+		if (LRUlist.size() == numFrames) { //if the FIFOlist is full, where the memory map is equal to the size of the physical memory
+
+			LRUlist.pop_back();
+			LRUlist.push_front(pageNum);
+			numSwaps++;
+
+		}
+		else {
+			//just go ahead and add it to the queue
+			LRUlist.push_front(pageNum);
+
+		}
+	}
 
 }
 
