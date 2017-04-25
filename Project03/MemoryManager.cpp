@@ -22,12 +22,21 @@ MemoryManager::MemoryManager(ReplacementPolicy policy, unsigned int pageSize, un
 
 unsigned long long MemoryManager::memoryAccess(unsigned long long address) {
 
+	int pageNumber;
+
 	switch (policy) {
 
 	case ReplacementPolicy::FIFO:
 
+		//get the page number from virtual address
+		pageNumber = address / pageSize;
+
+		//do the mapping from page to frame
+
+		//determine which frame to swap, and make the swap
 		FIFO(address);
 
+		//return the physical address of 
 
 		break;
 
@@ -82,11 +91,10 @@ void MemoryManager::LRU(unsigned long long address) {
 
 }
 
-unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress, unsigned int physicalPageNumber) {
+unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress) {
 
-	unsigned long long offset = (virtualAddressSpaceSize % this->pageSize);
-	unsigned long long physicalAddress = (physicalPageNumber * this->pageSize) + offset;
 
+	
 	return 1;
 
 }
