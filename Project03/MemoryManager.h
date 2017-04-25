@@ -6,7 +6,7 @@ Pat Coville
 Project 03 Virtual Memory Paging
 */
 
-#include "virtualMemoryManagerInterface.hpp";
+#include "virtualMemoryManagerInterface.hpp"
 #include <list>
 
 struct Frame {
