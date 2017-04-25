@@ -7,7 +7,6 @@ Project 03 Virtual Memory Paging
 */
 
 #include "MemoryManager.h";
-#include <list>
 
 
 MemoryManager::MemoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize)
@@ -61,7 +60,7 @@ void MemoryManager::FIFO(unsigned long long address) {
 
 	if (alreadyInList == false) {
 
-		if (FIFOlist.size() == virtualAddressSpaceSize) {
+		if (FIFOlist.size() == numFrames) { //if the FIFOlist is full, where the memory map is equal to the size of the physical memory
 
 			FIFOlist.pop_front();
 			FIFOlist.push_back(address);
@@ -83,10 +82,12 @@ void MemoryManager::LRU(unsigned long long address) {
 
 }
 
-unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress) {
+unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned long long virtualAddress, unsigned int physicalPageNumber) {
 
+	unsigned long long offset = (virtualAddressSpaceSize % this->pageSize);
+	unsigned long long physicalAddress = (physicalPageNumber * this->pageSize) + offset;
 
-
+	return 1;
 
 }
 

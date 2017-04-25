@@ -1,14 +1,10 @@
-﻿Build started 4/17/2017 9:56:59 PM.
+﻿Build started 4/24/2017 1:41:46 PM.
      1>Project "C:\Spring_2017\CMPSC 473\Project03\Project03\Project03.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MemoryManager.cpp driver.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MemoryManager.cpp
          MemoryManager.cpp
      1>c:\spring_2017\cmpsc 473\project03\project03\memorymanager.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
      1>c:\spring_2017\cmpsc 473\project03\project03\memorymanager.h(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-     1>c:\spring_2017\cmpsc 473\project03\project03\memorymanager.cpp(36): warning C4018: '<': signed/unsigned mismatch
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         driver.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Spring_2017\CMPSC 473\Project03\Debug\Project03.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Spring_2017\CMPSC 473\Project03\Debug\Project03.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Spring_2017\CMPSC 473\Project03\Debug\Project03.lib" /MACHINE:X86 Debug\driver.obj
          Debug\MemoryManager.obj
@@ -17,4 +13,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.39
+Time Elapsed 00:00:01.16
