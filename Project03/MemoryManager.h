@@ -8,7 +8,13 @@ Project 03 Virtual Memory Paging
 
 #include "virtualMemoryManagerInterface.hpp";
 #include <list>
-#include <map>
+
+struct Frame {
+
+	unsigned int pageNumber;
+	unsigned int frameNumber;
+
+};
 
 class MemoryManager : virtualMemoryManagerInterface{
 
@@ -25,7 +31,7 @@ private:
 	unsigned int pageSize;
 	unsigned int numFrames;
 	unsigned int virtualAddressSpaceSize;
-	list<unsigned int> FIFOlist;
-	list<unsigned int> LRUlist;
+	list<Frame> FIFOlist;
+	list<Frame> LRUlist;
 
 };
