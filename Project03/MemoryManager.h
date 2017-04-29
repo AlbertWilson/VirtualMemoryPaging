@@ -25,7 +25,7 @@ public:
 	unsigned int FIFO(unsigned int pageNum);
 	unsigned int LRU(unsigned int pageNum);
 	unsigned long long convertVirtualAddresstoPhysicalAddress(unsigned int frameNum, unsigned int offset);
-	unsigned int getNumSwaps();
+	unsigned long long getNumSwaps();
 
 private:
 	ReplacementPolicy policy;
