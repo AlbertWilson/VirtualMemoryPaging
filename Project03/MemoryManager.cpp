@@ -8,7 +8,7 @@ Project 03 Virtual Memory Paging
 
 #include "MemoryManager.h"
 
-MemoryManager::MemoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize)
+memoryManager::memoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize)
 	: virtualMemoryManagerInterface(policy, pageSize, numFrames, virtualAddressSpaceSize)
 {
 
@@ -19,7 +19,7 @@ MemoryManager::MemoryManager(ReplacementPolicy policy, unsigned int pageSize, un
 	
 }
 
-unsigned long long MemoryManager::memoryAccess(unsigned long long address) {
+unsigned long long memoryManager::memoryAccess(unsigned long long address) {
 
 	unsigned int pageNumber;
 	unsigned int offset;
@@ -61,7 +61,7 @@ unsigned long long MemoryManager::memoryAccess(unsigned long long address) {
 
 }
 
-unsigned int MemoryManager::FIFO(unsigned int pageNum) {
+unsigned int memoryManager::FIFO(unsigned int pageNum) {
 
 	bool alreadyInList = false;
 	Frame newFrame;
@@ -105,7 +105,7 @@ unsigned int MemoryManager::FIFO(unsigned int pageNum) {
 /*
 Least recently used page is at the end of the list
 */
-unsigned int MemoryManager::LRU(unsigned int pageNum) {
+unsigned int memoryManager::LRU(unsigned int pageNum) {
 
 	bool alreadyInList = false;
 	Frame newFrame;
@@ -155,13 +155,13 @@ unsigned int MemoryManager::LRU(unsigned int pageNum) {
 
 }
 
-unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigned int frameNum, unsigned int offset) {
+unsigned long long memoryManager::convertVirtualAddresstoPhysicalAddress(unsigned int frameNum, unsigned int offset) {
 
 	return frameNum * (unsigned int) pow(2, N) + offset;
 
 }
 
-unsigned int MemoryManager::getNumSwaps() {
+unsigned long long memoryManager::getNumSwaps() {
 
 	return numSwaps;
 

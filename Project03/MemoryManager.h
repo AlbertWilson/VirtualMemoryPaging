@@ -16,16 +16,16 @@ struct Frame {
 
 };
 
-class MemoryManager : virtualMemoryManagerInterface{
+class memoryManager : virtualMemoryManagerInterface{
 
 public:
 
-	MemoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize);
+	memoryManager(ReplacementPolicy policy, unsigned int pageSize, unsigned int numFrames, unsigned int virtualAddressSpaceSize);
 	unsigned long long memoryAccess(unsigned long long address);
 	unsigned int FIFO(unsigned int pageNum);
 	unsigned int LRU(unsigned int pageNum);
 	unsigned long long convertVirtualAddresstoPhysicalAddress(unsigned int frameNum, unsigned int offset);
-	unsigned int getNumSwaps();
+	unsigned long long getNumSwaps();
 
 private:
 	ReplacementPolicy policy;
