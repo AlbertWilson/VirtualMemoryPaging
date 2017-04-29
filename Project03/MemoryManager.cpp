@@ -161,7 +161,7 @@ unsigned long long MemoryManager::convertVirtualAddresstoPhysicalAddress(unsigne
 
 }
 
-unsigned int MemoryManager::getNumSwaps() {
+unsigned long long MemoryManager::getNumSwaps() {
 
 	return numSwaps;
 
