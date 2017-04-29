@@ -161,7 +161,11 @@ unsigned long long memoryManager::convertVirtualAddresstoPhysicalAddress(unsigne
 
 }
 
+<<<<<<< HEAD
 unsigned long long memoryManager::getNumSwaps() {
+=======
+unsigned long long MemoryManager::getNumSwaps() {
+>>>>>>> ab4d0fa089c40f7493b78b49067734a81709f783
 
 	return numSwaps;
 
